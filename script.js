@@ -85,11 +85,11 @@ function generatePassword() {
   }
 
   if (userUppers) {
-    possibles.push(lowers);
+    possibles.push(uppers);
   }
 
   if (userLowers) {
-    possibles.push(uppers);
+    possibles.push(lowers);
   }
 
   if (userNumbers) {
