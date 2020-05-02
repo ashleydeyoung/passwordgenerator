@@ -6,6 +6,5 @@ This task was to generate a random password depending on certain information sel
 The website can be found https://ashleydeyoung.github.io/passwordgenerator/
 
 The below image illustrates the application
- ./password.gnerator.application.png
+ [password generator](./password.generator.application.png)
 
- 
