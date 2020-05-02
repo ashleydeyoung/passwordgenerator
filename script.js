@@ -100,22 +100,23 @@ function generatePassword() {
       alert("You must chose a character!")
     
   }
-
+  
 
   var password = "";
 
   for (var i = 0; i < userLetters; i++) {
     var randomArray =
-      possibles[Math.floor(Math.random() * possibles.length)]
+      possibles[Math.floor(Math.random() * possibles.length)];
     
+    console.log(randomArray);
 
     var randomChar =
-      randomArray[Math.floor(Math.random() * possibles.length)];
+      randomArray[Math.floor(Math.random() * randomArray.length)];
         
     password += randomChar;
   }
 
-
+  console.log(password)
   return password;
   } else {
     alert("Password must be 8-128 characters long");
