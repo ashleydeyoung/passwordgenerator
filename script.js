@@ -1,7 +1,7 @@
-// Assignment Code
+
 var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
+// generates password
 function generatePassword() {
   var uppers = [
     "A",
@@ -60,48 +60,23 @@ function generatePassword() {
     "z",
   ];
   var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-  var specials = [
-    "!",
-    "#",
-    "$",
-    "%",
-    "&",
-    "'",
-    "(",
-    ")",
-    "*",
-    "+",
-    ",", 
-    "-", 
-    ".", 
-    "/", 
-    ":", 
-    ";", 
-    "<", 
-    "=", 
-    ">", 
-    "?", 
-    "@",
-    "[", 
-    "]", 
-    ",", 
-    "^",
-  ];
+  var specials = [" ", "\"", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
+  
 
 
-  var userLetters = prompt("How many letters in your password?");
+  var userLetters = prompt("How many characters would you like in your password?");
 
   if (userLetters > 7 && userLetters < 129) {
     userLetters;
 
   var userUppers = confirm(
-    "Would you like at least one Upper Case letters?"
+    "Would you like Upper Case letters?"
   );
   var userLowers = confirm(
-    "Would you like at least one Lower Case letters?"
+    "Would you like Lower Case letters?"
   );
-  var userNumbers = confirm("Would you like at least one number?");
-  var userSpecials = confirm("Would you like at least one special number?");
+  var userNumbers = confirm("Would you like numbers?");
+  var userSpecials = confirm("Would you like special characters?");
 
   var possibles = [];
   
@@ -129,8 +104,6 @@ function generatePassword() {
 
   var password = "";
 
-  console.log(possibles)
-
   for (var i = 0; i < userLetters; i++) {
     var randomArray =
       possibles[Math.floor(Math.random() * possibles.length)]
@@ -142,8 +115,8 @@ function generatePassword() {
     password += randomChar;
   }
 
-  console.log(password);
-  return password
+
+  return password;
   } else {
     alert("Password must be 8-128 characters long");
     
@@ -157,5 +130,5 @@ function writePassword() {
 
 }
 
-// Add event listener to generate button
+// generate button
 generateBtn.addEventListener("click", writePassword);
